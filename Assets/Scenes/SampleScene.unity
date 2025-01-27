@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &272549906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272549907}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272549907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272549906}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.048162, y: 7.407404, z: 9.920858}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &478473776
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +274,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxForce: 7
   clockwise: 0
-  throttle: 0
   torque: 1
   rigid: {fileID: 553484057}
 --- !u!1 &553484056
@@ -335,7 +365,7 @@ MonoBehaviour:
   rotationSpeed: {x: 10, y: 5, z: 10}
   rotationDampening: {x: 50, y: 150, z: 50}
   targetPos: {x: 0, y: 0, z: 0}
-  targetTransform: {fileID: 0}
+  targetTransform: {fileID: 272549907}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +580,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxForce: 7
   clockwise: 1
-  throttle: 0
   torque: 1
   rigid: {fileID: 553484057}
 --- !u!1 &913556243
@@ -871,7 +900,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxForce: 7
   clockwise: 1
-  throttle: 0
   torque: 1
   rigid: {fileID: 553484057}
 --- !u!1 &1684639828
@@ -1204,7 +1232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxForce: 7
   clockwise: 0
-  throttle: 0
   torque: 1
   rigid: {fileID: 553484057}
 --- !u!1 &2131330714
@@ -1320,3 +1347,4 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 553484058}
   - {fileID: 913556247}
+  - {fileID: 272549907}
