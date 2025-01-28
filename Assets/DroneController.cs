@@ -145,6 +145,9 @@ public class DroneController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The amount to rotate around each axis to align the drone with the <see cref="TargetForce"/> vector.
+    /// </summary>
     private Vector3 RotationInput(Vector3 rotError, Vector3 rotErrorDelta)
     {
         Vector3 rotationProportionalInput = new Vector3(
@@ -188,7 +191,7 @@ public class DroneController : MonoBehaviour
         props[2].Throttle += rotationInput.x + rotationInput.z - rotationInput.y;
         props[3].Throttle += -rotationInput.x + rotationInput.z + rotationInput.y;
         
-        // Update previous physics values for calculating deltas
+        // Update previous error values for calculating deltas
         _lastPosError = PosError;
         _lastRotError = rotError;
         _lastTargetPos = TargetPos;
