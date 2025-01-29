@@ -18,11 +18,10 @@ public class CameraController : MonoBehaviour
             Input.GetAxis("Jump") * Time.deltaTime * moveSpeed, 
             Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed, Space.Self);
         
-
         xRotation += -Input.GetAxis("Mouse Y") * cameraSens;
         yRotation += Input.GetAxis("Mouse X") * cameraSens;
         xRotation = Mathf.Clamp(xRotation, -85, 85);
-        yRotation %= 360;
+        //yRotation %= 360;
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
