@@ -63,10 +63,11 @@ public class DroneController : MonoBehaviour
         dampeningInput.x *= movementDampening.x;
         dampeningInput.y *= movementDampening.y;
         dampeningInput.z *= movementDampening.z;
-
-        Vector3 externalForceInput = -Physics.gravity * _rigid.mass;
+        
+        Vector3 externalForceInput = -Physics.gravity * _rigid.mass / 4f;
         
         Vector3 targetForce = proportionalInput + dampeningInput + externalForceInput;
+        
         Debug.DrawRay(transform.position, targetForce, Color.red);
 
         return targetForce;
@@ -103,7 +104,7 @@ public class DroneController : MonoBehaviour
         // Do not flip drone when descending, reverse propeller
         if (targetForce.y < 0)
         {
-            dirError = -dirError;
+           // dirError = -dirError;
         }
         
         // Yaw to face the target position. If arrived at the target position, yaw to face world forward.
@@ -178,7 +179,7 @@ public class DroneController : MonoBehaviour
         // Set base throttle for all props to keep drone hovering / moving vertically towards target
         foreach (Propeller prop in props)
         {
-            prop.Throttle = Vector3.Dot(transform.up, targetForce);
+            prop.Throttle = Vector3.Dot(targetForce, transform.up);
         }
         
         Vector3 rotError = RotError(targetForce);
