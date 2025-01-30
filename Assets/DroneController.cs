@@ -47,6 +47,11 @@ public class DroneController : MonoBehaviour
     private Vector3 _lastRotError = Vector3.zero;
     
     private Rigidbody _rigid;
+    
+    /// <summary>
+    /// Difference between drone position and target position
+    /// </summary>
+    private Vector3 PosError => TargetPos - transform.position;
 
     /// <summary>
     /// Target force to apply for the drone to navigate to <see cref="TargetPos"/>. Controlled by positional PID
@@ -73,11 +78,6 @@ public class DroneController : MonoBehaviour
         return targetForce;
     }
     
-    /// <summary>
-    /// Difference between drone position and target position
-    /// </summary>
-    private Vector3 PosError => TargetPos - transform.position;
-
     /// <summary>
     /// Change in positional error this physics step
     /// </summary>
